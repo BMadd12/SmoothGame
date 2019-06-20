@@ -1,0 +1,10 @@
+C:\Users\Ben\source\repos\EmpireProceduralGenerationDemo\EmpireProceduralGenerationDemo\bin\Debug\EmpireProceduralGenerationDemo.exe.config
+C:\Users\Ben\source\repos\EmpireProceduralGenerationDemo\EmpireProceduralGenerationDemo\bin\Debug\EmpireProceduralGenerationDemo.exe
+C:\Users\Ben\source\repos\EmpireProceduralGenerationDemo\EmpireProceduralGenerationDemo\bin\Debug\EmpireProceduralGenerationDemo.pdb
+C:\Users\Ben\source\repos\EmpireProceduralGenerationDemo\EmpireProceduralGenerationDemo\obj\Debug\EmpireProceduralGenerationDemo.csprojAssemblyReference.cache
+C:\Users\Ben\source\repos\EmpireProceduralGenerationDemo\EmpireProceduralGenerationDemo\obj\Debug\EmpireProceduralGenerationDemo.Form1.resources
+C:\Users\Ben\source\repos\EmpireProceduralGenerationDemo\EmpireProceduralGenerationDemo\obj\Debug\EmpireProceduralGenerationDemo.Properties.Resources.resources
+C:\Users\Ben\source\repos\EmpireProceduralGenerationDemo\EmpireProceduralGenerationDemo\obj\Debug\EmpireProceduralGenerationDemo.csproj.GenerateResource.cache
+C:\Users\Ben\source\repos\EmpireProceduralGenerationDemo\EmpireProceduralGenerationDemo\obj\Debug\EmpireProceduralGenerationDemo.csproj.CoreCompileInputs.cache
+C:\Users\Ben\source\repos\EmpireProceduralGenerationDemo\EmpireProceduralGenerationDemo\obj\Debug\EmpireProceduralGenerationDemo.exe
+C:\Users\Ben\source\repos\EmpireProceduralGenerationDemo\EmpireProceduralGenerationDemo\obj\Debug\EmpireProceduralGenerationDemo.pdb
