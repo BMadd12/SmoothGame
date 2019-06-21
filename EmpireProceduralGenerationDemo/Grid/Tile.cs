@@ -31,10 +31,8 @@ namespace EmpireProceduralGenerationDemo.Grid
         }
 
 
-        public Tile(int xPos, int yPos)
+        public Tile(int xPos, int yPos, Random rand)
         {
-
-            Random rand = new Random();
 
             this.xPos = xPos;
             this.yPos = yPos;
@@ -66,12 +64,12 @@ namespace EmpireProceduralGenerationDemo.Grid
                 {
                     tags.Add(Type.Water);
                 }
-                else if (gold < 20.0 && wood < 25.0) {
+                else if (gold < 30.0 && wood < 45.0) {
                     tags.Add(Type.Grasslands);
                 }
             }
 
-            if (wood > 70.0) {
+            if (wood >= 45.0) {
                 tags.Add(Type.Forest);
             }
 
@@ -154,6 +152,19 @@ namespace EmpireProceduralGenerationDemo.Grid
 
             //Reset tags
             setType();
+        }
+
+        public List<string> Tags {
+            get {
+                List<string> tgs = new List<string>();
+
+                foreach (Type t in tags)
+                {
+                    tgs.Add(t.ToString());
+                }
+
+                return tgs;
+            }
         }
 
         public int XPOS {
