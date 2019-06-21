@@ -8,15 +8,6 @@ namespace EmpireProceduralGenerationDemo.Grid
 {
     public class Grid
     {
-        //Generate enum of tile types
-        private enum Type
-        {
-            Water = 0,
-            Grasslands = 1,
-            Desert = 2,
-            Mountain = 3,
-            Forest = 4
-        }
 
         private Tile[] grid;
         private int length;
@@ -50,26 +41,8 @@ namespace EmpireProceduralGenerationDemo.Grid
             Random rand = new Random();
 
             for (int i = 0; i < grid.Length; i++) {
-                Type type = (Type)rand.Next(0, 5);
 
-                //Create each tile based on the random defined above
-                switch (type) {
-                    case Type.Desert:
-                        grid[i] = new Desert(xPos, yPos);
-                        break;
-                    case Type.Grasslands:
-                        grid[i] = new Grass(xPos, yPos);
-                        break;
-                    case Type.Mountain:
-                        grid[i] = new Mountain(xPos, yPos);
-                        break;
-                    case Type.Water:
-                        grid[i] = new Water(xPos, yPos);
-                        break;
-                    case Type.Forest:
-                        grid[i] = new Forest(xPos, yPos);
-                        break;
-                }
+                grid[i] = new Tile(xPos, yPos);
 
                 xPos++;
 
