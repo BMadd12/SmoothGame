@@ -9,44 +9,44 @@ namespace EmpireProceduralGenerationDemo.Grid
     public static class Modify
     {
 
-        public static double[] Desert() {
+        public static int[] Desert() {
 
-            double[] desert = new double[] { -0.5, 0.3, 0.5, -0.4};
+            int[] desert = new int[] { -6, 3, 6, -3 };
 
             return desert;
         }
 
-        public static double[] Forest()
+        public static int[] Forest()
         {
-            double[] forest = new double[] { 0.6, -0.2, -0.7, 0.8 };
+            int[] forest = new int[] { 2, -2, -3, 4 };
 
             return forest;
         }
 
-        public static double[] Water()
+        public static int[] Water()
         {
-            double[] water = new double[] { 0.9, -0.7, -0.7, 0.1 };
+            int[] water = new int[] { 4, -3, -1, 1 };
 
             return water;
         }
 
-        public static double[] Grasslands()
+        public static int[] Grasslands()
         {
-            double[] grass = new double[] { 0.4, 0.2, -0.2, -0.6 };
+            int[] grass = new int[] { 2, -1, 1, -5 };
 
             return grass;
         }
 
-        public static double[] Mountain()
+        public static int[] Mountain()
         {
-            double[] mountain = new double[] { -0.4, 0.7, 0.4, -0.2 };
+            int[] mountain = new int[] { -5, 7, 7, -3 };
 
             return mountain;
         }
 
-        public static double[] Plain()
+        public static int[] Plain()
         {
-            double[] plain = new double[] { 0.0, 0.0, 0.0, 0.0 };
+            int[] plain = new int[] { 1, 1, 1, 1 };
 
             return plain;
         }

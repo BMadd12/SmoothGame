@@ -97,14 +97,14 @@ namespace EmpireProceduralGenerationDemo.Grid
             {
 
                 //initialize modifiers
-                double[] modifiers = new double[] { 0.0, 0.0, 0.0, 0.0 };
+                int[] modifiers = new int[] { 0, 0, 0, 0 };
 
                 //find neighbours
                 List<Tile> neighbours = getNeighbours(tile.XPOS, tile.YPOS);
 
                 //extract modifiers from neighbours
                 foreach (Tile neighbour in neighbours) {
-                    double[] neighbourMods = neighbour.getMods();
+                    int[] neighbourMods = neighbour.getMods();
 
                     for (int i = 0; i < modifiers.Length; i++) {
                         modifiers[i] += neighbourMods[i];

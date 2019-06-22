@@ -11,10 +11,10 @@ namespace EmpireProceduralGenerationDemo.Grid
         protected int xPos;
         protected int yPos;
 
-        protected float food;
-        protected float stone;
-        protected float gold;
-        protected float wood;
+        protected int food;
+        protected int stone;
+        protected int gold;
+        protected int wood;
 
         private List<Type> tags = new List<Type>();
 
@@ -37,10 +37,10 @@ namespace EmpireProceduralGenerationDemo.Grid
             this.xPos = xPos;
             this.yPos = yPos;
 
-            food = rand.Next(1, 101);
-            stone = rand.Next(1, 101);
-            gold = rand.Next(1, 101);
-            wood = rand.Next(1, 101);
+            food = rand.Next(0, 21);
+            stone = rand.Next(0, 21);
+            gold = rand.Next(0, 21);
+            wood = rand.Next(0, 21);
 
             setType();
 
@@ -48,9 +48,9 @@ namespace EmpireProceduralGenerationDemo.Grid
 
         private void setType() {
 
-            if (food < 25.0)
+            if (food < 8)
             {
-                if (wood < 45.0 && stone < 60.0)
+                if (wood < 10 && stone < 12)
                 {
                     tags.Add(Type.Desert);
                 }
@@ -60,17 +60,21 @@ namespace EmpireProceduralGenerationDemo.Grid
                 }
             }
             else {
-                if (wood < 25.0 && stone < 10.0 && gold < 15.0)
+                if (wood < 10 && stone < 5 && gold < 8)
                 {
                     tags.Add(Type.Water);
                 }
-                else if (gold < 30.0 && wood < 45.0) {
+                else if (gold < 10 && wood < 15) {
                     tags.Add(Type.Grasslands);
                 }
             }
 
-            if (wood >= 45.0) {
+            if (wood >= 18) {
                 tags.Add(Type.Forest);
+            }
+
+            if (gold >= 15 && stone >= 12) {
+                tags.Add(Type.Mountain);
             }
 
 
@@ -85,12 +89,12 @@ namespace EmpireProceduralGenerationDemo.Grid
         /// Generates the modifiers the tile applies to its neighbours based on its tags
         /// </summary>
         /// <returns>Returns an array containing doubles that act as modifiers</returns>
-        public double[] getMods() {
+        public int[] getMods() {
 
-            List<double[]> modifiers = new List<double[]>();
+            List<int[]> modifiers = new List<int[]>();
 
             //Hardcoded for the time being. May be unreasonable depending on the number of stats.
-            double[] mods = new double[] { 0.0, 0.0, 0.0, 0.0 };
+            int[] mods = new int[] { 0, 0, 0, 0 };
 
             //Gather modifiers based on tags
             foreach (Type tag in tags) {
@@ -118,17 +122,11 @@ namespace EmpireProceduralGenerationDemo.Grid
             }
 
             //Average the modifiers
-            foreach (double[] mod in modifiers) {
+            foreach (int[] mod in modifiers) {
 
                 for (int i = 0; i < 4; i++) {
                     mods[i] += mod[i];
                 }
-            }
-
-
-            for (int i = 0; i < mods.Length; i++)
-            {
-                mods[i] = mods[i] % tags.Count();
             }
 
             return mods;
@@ -139,13 +137,65 @@ namespace EmpireProceduralGenerationDemo.Grid
         /// Applies the modifies of all the neighbours
         /// </summary>
         /// <param name="modifiers">An array of modifiers, generated from neighbouring getMods()</param>
-        public void applyMods(double[] modifiers)
+        public void applyMods(int[] modifiers)
         {
             //Modify values
-            food += (food * (float)modifiers[0]);
-            stone += (stone * (float)modifiers[1]);
-            gold += (gold * (float)modifiers[2]);
-            wood += (wood * (float)modifiers[3]);
+            int modifiedFood = food + modifiers[0];
+
+            if (modifiedFood > 20) {
+                food = 20;
+            } else if (modifiedFood < 0)
+            {
+                food = 0;
+            } else
+            {
+                food = modifiedFood;
+            }
+
+            int modifiedStone = stone + modifiers[1];
+
+            if (modifiedStone > 20)
+            {
+                stone = 20;
+            }
+            else if (modifiedStone < 0)
+            {
+                stone = 0;
+            }
+            else
+            {
+                stone = modifiedStone;
+            }
+
+            int modifiedGold = gold + modifiers[2];
+
+            if (modifiedGold > 20)
+            {
+                gold = 20;
+            }
+            else if (modifiedGold < 0)
+            {
+                gold = 0;
+            }
+            else
+            {
+                gold = modifiedGold;
+            }
+
+            int modifiedWood = wood + modifiers[3];
+
+            if (modifiedWood > 20)
+            {
+                wood = 20;
+            }
+            else if (modifiedWood < 0)
+            {
+                wood = 0;
+            }
+            else
+            {
+                wood = modifiedWood;
+            }
 
             //clear tags
             tags.Clear();
@@ -185,7 +235,7 @@ namespace EmpireProceduralGenerationDemo.Grid
             return coords;
         }
 
-        public float Food {
+        public int Food {
             get {
                 return food;
             }
@@ -196,7 +246,7 @@ namespace EmpireProceduralGenerationDemo.Grid
 
         }
 
-        public float Stone {
+        public int Stone {
             get {
                 return stone;
             }
@@ -207,7 +257,7 @@ namespace EmpireProceduralGenerationDemo.Grid
 
         }
 
-        public float Gold {
+        public int Gold {
             get {
                 return gold;
             }
@@ -218,7 +268,7 @@ namespace EmpireProceduralGenerationDemo.Grid
 
         }
 
-        public float Wood {
+        public int Wood {
             get {
                 return wood;
             }
