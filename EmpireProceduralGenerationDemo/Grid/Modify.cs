@@ -11,7 +11,7 @@ namespace EmpireProceduralGenerationDemo.Grid
 
         public static int[] Desert() {
 
-            int[] desert = new int[] { -6, 3, 6, -3 };
+            int[] desert = new int[] { -6, 3, 6, -1 };
 
             return desert;
         }
@@ -25,21 +25,21 @@ namespace EmpireProceduralGenerationDemo.Grid
 
         public static int[] Water()
         {
-            int[] water = new int[] { 4, -3, -1, 1 };
+            int[] water = new int[] { 4, -3, -1, 2 };
 
             return water;
         }
 
         public static int[] Grasslands()
         {
-            int[] grass = new int[] { 2, -1, 1, -5 };
+            int[] grass = new int[] { 2, -1, 1, -3 };
 
             return grass;
         }
 
         public static int[] Mountain()
         {
-            int[] mountain = new int[] { -5, 7, 7, -3 };
+            int[] mountain = new int[] { -5, 7, 7, 0 };
 
             return mountain;
         }

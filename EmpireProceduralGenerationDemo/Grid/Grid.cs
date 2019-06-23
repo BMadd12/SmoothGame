@@ -111,6 +111,11 @@ namespace EmpireProceduralGenerationDemo.Grid
                     }
                 }
 
+                //Average the modifiers
+                for (int i = 0; i < modifiers.Length; i++) {
+                    modifiers[i] = modifiers[i] / neighbours.Count;
+                }
+
                 //apply modifiers
                 tile.applyMods(modifiers);
 

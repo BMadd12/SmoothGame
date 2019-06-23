@@ -69,7 +69,7 @@ namespace EmpireProceduralGenerationDemo.Grid
                 }
             }
 
-            if (wood >= 18) {
+            if (wood >= 15) {
                 tags.Add(Type.Forest);
             }
 
